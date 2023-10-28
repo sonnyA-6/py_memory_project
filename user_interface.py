@@ -30,6 +30,16 @@ def promptNumberValue(value):
         if i == value:
             return i
         
+def getUserNumberConversionFromDecimal(value):
+
+    #This function gathers the users number and will be used in game logic for checking. WILL NEED TWO ADDITIONAL FUNCTIONS FOR HEX -> DEC & BIN | BIN -> DEC & HEX
+    #Goes from DEC -> HEX & BIN
+
+    numbers = input("Enter the hex and binary values (separated by a space): ")
+    user_Hex, user_Bin = numbers.split()
+
+    return user_Hex, user_Bin
+        
 
 def playAgain(value):
 
@@ -41,14 +51,14 @@ def playAgain(value):
         return False    #This will end the game
     
 
-def wrongAnswer():
+def verbalWrongAnswer():
 
     #This function will print that the user was wrong in their choice.
 
     wrong = "Your answer was incorrect, please try again."
     print(wrong)
 
-def correctAnswer():
+def verbalCorrectAnswer():
 
     #This function print that the user was correct in their choice.
 
