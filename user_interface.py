@@ -32,14 +32,35 @@ def promptNumberValue(value):
         
 def getUserNumberConversionFromDecimal(value):
 
-    #This function gathers the users number and will be used in game logic for checking. WILL NEED TWO ADDITIONAL FUNCTIONS FOR HEX -> DEC & BIN | BIN -> DEC & HEX
+    #This function gathers the users number and will be used in game logic for checking.
     #Goes from DEC -> HEX & BIN
 
     numbers = input("Enter the hex and binary values (separated by a space): ")
     user_Hex, user_Bin = numbers.split()
 
     return user_Hex, user_Bin
-        
+
+
+def getUserNumberConversionFromHexadecimal(value):
+
+    #This function gathers the users number and will be used in game logic for checking.
+    #Goes from HEX -> DEC & BIN
+
+    numbers = input("Enter the decimal and binary values (separated by a space): ")
+    user_Dec, user_Bin = numbers.split()
+
+    return user_Dec, user_Bin
+
+
+def getUserNumberConversionFromBinary(value):
+
+    #This function gathers the users number and will be used in game logic for checking.
+    #Goes from BIN -> DEC & HEX
+
+    numbers = input("Enter the hex and decimal values (separated by a space): ")
+    user_Hex, user_Dec = numbers.split()
+
+    return user_Hex, user_Dec
 
 def playAgain(value):
 

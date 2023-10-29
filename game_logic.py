@@ -11,7 +11,7 @@ user_Lives = 3
 
 def decimal_to_hex_binary(value):
 
-    #This function generates the numerical representations of the random number.
+    #This function generates the numerical representations of the random number converting from dec -> hex & binary
 
     hex_value = hex(rand_Number).upper()
     binary_value = bin(rand_Number)[2:]
@@ -19,6 +19,28 @@ def decimal_to_hex_binary(value):
     print("The Hex Value is: " + hex_value, ". The Binary Value is: " + binary_value + ". The decimal value is: " + str(value))
 
     return hex_value, binary_value
+
+def hex_to_dec_binary(value):
+
+    #This function generates the numerical representations of the random number converting from hex -> dec & binary 
+
+    dec_value = rand_Number
+    binary_value = bin(rand_Number)[2:]
+
+    print(" The Binary Value is: " + binary_value + ". The decimal value is: " + dec_value + ".")
+
+    return dec_value, binary_value
+
+def binary_to_hex_dec(value):
+
+    #This function generates the numerical representations of the random number converting from binary -> hex & dec
+
+    hex_value = hex(rand_Number).upper()
+    dec_value = rand_Number
+
+    print("The Hex Value is: " + hex_value + ". The decimal value is: " + dec_value)
+
+    return hex_value, dec_value
 
 
 def logicCorrectAnswer():
