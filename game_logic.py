@@ -84,6 +84,15 @@ def memoryGameOver():
     return noLives()
 
 
+def restartGame():
+
+    #If the user is out of lives, restore the lives to 3.
+    global user_Lives
+
+    if user_Lives == 0:
+        user_Lives = 3
+
+
 if __name__== "__main__":
 
     #Testing decimal_to_hex_binary function
