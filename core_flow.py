@@ -7,19 +7,23 @@ from game_logic import *
 
 gameON = True
 
-
-
 def main():
 
-    global gameON
+    global gameON 
     
-    while gameON:
-        printGreeting()
-        playChoice = confirmPlay()
+    while gameON:       #while true
+        printGreeting()     #Welcome the player
+        playChoice = confirmPlay() #Grab the players choice
 
         if playChoice == True:
-            promptNumberValue()
-        else:
+            choice = promptNumberValue()     #If they choose to play then continue
+            convChoice = numberForUser(choice)
+            outputTypeChosenByUser(convChoice) #Outputs the type of choice by the user
+
+            """ Need to do the comparison checking to ensure the number given to
+            the user will match the conversion number that the user will give.
+            """
+        else:                       #Otherwise, end the game.
             memoryGameOver()
             print("user chose not to play")
             gameON = False

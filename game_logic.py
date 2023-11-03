@@ -9,6 +9,27 @@ rand_Number = random.randint(0,255)
 
 user_Lives = 3
 
+
+def numberForUser(value):
+
+    global rand_Number
+    user_choices = ['hex', 'dec', 'bin']        #list of choices
+
+    hexChoice = hex(rand_Number)
+    decChoice = rand_Number
+    binChoice = bin(rand_Number)
+
+    for choice in user_choices:      #Iterate through those choices looking for the match in the first letter
+        if value[:3].lower()==choice:
+            if choice[0] == 'h':
+                return str(hexChoice)
+            elif choice[0] == 'd':
+                return str(decChoice) 
+            elif choice[0] == 'b':
+                return str(binChoice)
+    print("No match was found please choose from hexadecimal, decimal, or binary.")
+
+
 def decimal_to_hex_binary(value):
 
     #This function generates the numerical representations of the random number converting from dec -> hex & binary
@@ -93,15 +114,43 @@ def restartGame():
         user_Lives = 3
 
 
+def test_numberForUser():
+
+    rand_Number = 10
+    # Test case 1: Hexadecimal conversion
+    assert numberForUser('hex') == hex(rand_Number)
+    
+    # Test case 2: Decimal conversion
+    assert numberForUser('dec') == str(rand_Number)
+    
+    # Test case 3: Binary conversion
+    assert numberForUser('bin') == bin(rand_Number)
+    
+    # Test case 4: Case-insensitive input
+    assert numberForUser('HEX') == hex(rand_Number)
+    
+    # Test case 5: Invalid input
+    assert numberForUser('oct') == "No match was found. Please choose from 'hex', 'dec', or 'bin'."
+    
+    # Add more test cases as needed
+
+
+
+
+
 if __name__== "__main__":
 
     #Testing decimal_to_hex_binary function
 
-    decimal_to_hex_binary(rand_Number)
+    #decimal_to_hex_binary(rand_Number)
 
     print('\n')
     print('\n')
     print('\n')
 
     #Testing logicCorrectAnswer function
-    logicCorrectAnswer()
+    #logicCorrectAnswer()
+
+
+    # Run the test cases
+    test_numberForUser()

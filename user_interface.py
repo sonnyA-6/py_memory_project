@@ -1,18 +1,19 @@
 greeting = """Hello, and welcome, this is a memory game designed to test knowledge of conversions! In this game, you will choose one of the following options: Binary, Decimal, or Hexadecimal. The 
-option you choose will be the number you receive and must do the conversion for! For example, if you choose decimal and are prompted with the number 1 your answers would included the binary and hexadecimal versions.
+option you choose will be the number you receive and must do the conversion for! For example, if you choose decimal and are prompted with the number 1 your answers would include the binary and hexadecimal versions.
 """
 
 
 def printGreeting():
     #This function prints the greeting. Works as intended.
 
-    print(greeting)
+    print(greeting, "\n")
 
-def confirmPlay(value):
+def confirmPlay():
     
     #This function gathers the input from the user and returns a boolean for the core logic.
 
     value = input("If you are ready to play please type: Y or y. If not, type: N or n. : ")
+    print("\n")
 
     if value == "Y" or value == "y":
         #print("User has indicated play.") Delete this later. Only here to confirm the choice was taken.
@@ -20,15 +21,19 @@ def confirmPlay(value):
     else:
         return False
 
-def promptNumberValue(value):
+def promptNumberValue():
 
     numberWordComparison = ['Hex','hex','hexadecimal','Hexadecimal','Dec','dec','Decimal','decimal', 'Bin','bin','Binary','binary']
 
+    numberChoice = input("Choose which type of number to convert from: ")
     #Loop through the array and if the input is equal to any of the strings return it to be used in core logic.
 
     for i in numberWordComparison: 
-        if i == value:
+        if numberChoice == i:
             return i
+        
+def outputTypeChosenByUser(value):
+    print(value)
         
 def getUserNumberConversionFromDecimal(value):
 
